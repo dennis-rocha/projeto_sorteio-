@@ -8,7 +8,7 @@ def showDB(obj):
     
     for i in range(0,len(data)):
         for j in range (0,3):
-            screem.tableWidget.setItem(i,j,QtWidgets.QTableWidgetIte.m9`str(data[i[j]]))
+            screem.tableWidget.setItem(i,j,QtWidgets.QTableWidgetItem(str(data[i][j])))
 def main():
     
     nome=""
