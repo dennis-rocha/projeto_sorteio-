@@ -25,10 +25,13 @@ def main():
     
     
 def raffle():
-    print("olá mundo")
+    
+    print("ola mundo")
 
 app=QtWidgets.QApplication([])
 screem=uic.loadUi("main.ui")
+obj = db.cadastro("","",0)
+showDB(obj)
 screem.pushButton.clicked.connect(main)
 screem.pushButton_2.clicked.connect(raffle)
 screem.show()
