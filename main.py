@@ -1,5 +1,6 @@
 from PyQt5 import uic, QtWidgets
 import banco as db
+import gerarRandom as gr
 
 def showDB(obj):
     data=obj.getData()
@@ -9,8 +10,8 @@ def showDB(obj):
     for i in range(0,len(data)):
         for j in range (0,3):
             screem.tableWidget.setItem(i,j,QtWidgets.QTableWidgetItem(str(data[i][j])))
+            
 def main():
-    
     nome=""
     email=""
     telefone=0
@@ -25,8 +26,14 @@ def main():
     
     
 def raffle():
+    obj = db.cadastro("","",0)
+    data=obj.getData()
+    size=len(data)
     
-    print("ola mundo")
+    print(size)
+    
+    numRaffle=gr.raffle(size)
+    print(f"numero sorteado é: {numRaffle}")
 
 app=QtWidgets.QApplication([])
 screem=uic.loadUi("main.ui")
