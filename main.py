@@ -1,6 +1,8 @@
 from PyQt5 import uic, QtWidgets
 import banco as db
 import gerarRandom as gr
+import time
+import threading
 
 def showDB(obj):
     data=obj.getData()
@@ -23,20 +25,41 @@ def main():
     obj = db.cadastro(nome, email, telefone)
     obj.insert()
     showDB(obj) 
+  
+def random():
+    obj = db.cadastro("","",0)
+    data=obj.getData()   
+    size=len(data)   
+    numRaffle=gr.raffle(size)
     
+    for i in range(0,101):
+        time.sleep(0.1)
+        if i < 19:
+            print(f"Carregando base de dados {i}")
+        elif i < 46:
+            print(f"Escolhendo valor aleatorio {i}")
+        elif i < 75:
+            print(f"Recuperando dados {i}")
+        elif i < 88:
+            print (f"carregando nome {i}")
+        elif i < 99:
+            print(f"Só mais alguns instantes... {i}")
+        elif i < 100:
+            print(f"Finalizado")
+            
+        #setText("")
+        screem2.progressBar.setValue(i)
+        
     
+    screem2.label_2.setText(f"O vercedor deste sorteio é:{numRaffle}")
+
 def raffle():
     screem2.show()
-    obj = db.cadastro("","",0)
-    data=obj.getData()
-    size=len(data)
+    screem2.pushButton.clicked.connect(random)
     
     
-    print(size)
+    print(f"numero sorteado éxxxxxxx:")
     
-    numRaffle=gr.raffle(size)
-    print(f"numero sorteado é: {numRaffle}")
-    screem2.label_2.setText(f"O vercedor deste sorteio é:{numRaffle}")
 
 #INICIANDO O SISTEMA
 

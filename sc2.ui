@@ -29,10 +29,23 @@
      </font>
     </property>
     <property name="value">
-     <number>1</number>
+     <number>0</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>370</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Sortear</string>
     </property>
    </widget>
    <widget class="QWidget" name="">
