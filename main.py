@@ -35,17 +35,17 @@ def random():
     for i in range(0,101):
         time.sleep(0.1)
         if i < 19:
-            print(f"Carregando base de dados {i}")
+            screem2.label_3.setText("Carregando base de dados")
         elif i < 46:
-            print(f"Escolhendo valor aleatorio {i}")
+            screem2.label_3.setText("Escolhendo valor aleatorio")
         elif i < 75:
-            print(f"Recuperando dados {i}")
+            screem2.label_3.setText("Recuperando dados")
         elif i < 88:
-            print (f"carregando nome {i}")
-        elif i < 99:
-            print(f"Só mais alguns instantes... {i}")
+            screem2.label_3.setText("carregando nome")
+        elif i < 96:
+            screem2.label_3.setText("Só mais alguns instantes...")
         elif i < 100:
-            print(f"Finalizado")
+            screem2.label_3.setText("Finalizado")
             
         #setText("")
         screem2.progressBar.setValue(i)
@@ -56,9 +56,6 @@ def random():
 def raffle():
     screem2.show()
     screem2.pushButton.clicked.connect(random)
-    
-    
-    print(f"numero sorteado éxxxxxxx:")
     
 
 #INICIANDO O SISTEMA
