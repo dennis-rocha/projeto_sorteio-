@@ -26,20 +26,26 @@ def main():
     
     
 def raffle():
+    screem2.show()
     obj = db.cadastro("","",0)
     data=obj.getData()
     size=len(data)
+    
     
     print(size)
     
     numRaffle=gr.raffle(size)
     print(f"numero sorteado é: {numRaffle}")
+    screem2.label_2.setText(f"O vercedor deste sorteio é:{numRaffle}")
+
+#INICIANDO O SISTEMA
 
 app=QtWidgets.QApplication([])
 screem=uic.loadUi("main.ui")
-obj = db.cadastro("","",0)
-showDB(obj)
-screem.pushButton.clicked.connect(main)
-screem.pushButton_2.clicked.connect(raffle)
+screem2=uic.loadUi("sc2.ui")
+obj = db.cadastro("","",0)#....................NÃO SEI COMO RECUPERAR OS DADOS DO MÉTODO getData() SEM UM OBJETO
+showDB(obj)#...................................INICIANDO O PROGRAMA COM A LISTA
+screem.pushButton.clicked.connect(main)#.......RECUPERA OS DADOS INSERIDOS PELO USUARIO
+screem.pushButton_2.clicked.connect(raffle)#...FUNÇÃO SORTEAR
 screem.show()
 app.exec()
