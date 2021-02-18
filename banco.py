@@ -15,6 +15,8 @@ class cadastro:
     def insert (self):
         cursor.execute("INSERT INTO pessoas VALUES ('"+str(self.nome)+"','"+str(self.email)+"','"+str(self.telefone)+"')")
         conector.commit()
+        #cursor.close() !!!!!!!!!!!!!!!!! NÃO FUNCIONA SE FECHAR O BANCO DE DADOS
+        #conector.close()
         
     def getData (self):
         cursor.execute("SELECT * FROM pessoas")
